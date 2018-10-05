@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header></app-header>
 
-<app-add-form></app-add-form>
+<app-add-form (addTodoItem)="addTodo($event)"></app-add-form>
 
-<app-todo-items></app-todo-items>
+<app-todo-items [items]="todoItems"></app-todo-items>
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!abc

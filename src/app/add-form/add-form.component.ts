@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-form',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AddFormComponent implements OnInit {
   placeholderText = '請輸入代辦事項';
   todoText = '';
+  @Output() addTodoItem = new EventEmitter();
+
   addTodo($event: MouseEvent) {
-    console.log('輸入的文字為 : ' + this.todoText);
+    this.addTodoItem.emit(this.todoText);
   }
 
   changeTodoText($event: KeyboardEvent) {
