@@ -5,16 +5,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AddFormComponent,
     TodoItemsComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  title = '歡迎來到Todo App';
+  getDate() {
+    return (new Date());
+  }
   constructor() { }
 
   ngOnInit() {
