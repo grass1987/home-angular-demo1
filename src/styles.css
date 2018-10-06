@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+strong {
+    color: rgb(161, 173, 91);
+}
+
+.blue {
+    color: rgb(12, 139, 0);
+}

@@ -28,6 +28,11 @@ export class AppComponent {
       value: text,
       done: false
     });
+    this.todoItems.push({
+      id: (new Date()).getTime(),
+      value: text,
+      done: false
+    });
   }
 
 }
