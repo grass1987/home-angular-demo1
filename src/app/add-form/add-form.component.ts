@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {TodoListService} from '../todo-list.service';
 
 @Component({
   selector: 'app-add-form',
@@ -6,18 +7,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-form.component.css']
 })
 export class AddFormComponent implements OnInit {
+  constructor(private todoListService: TodoListService) { }
   placeholderText = '請輸入代辦事項';
   todoText = '';
-  @Output() addTodoItem = new EventEmitter();
-
+  
   addTodo($event: MouseEvent) {
-    this.addTodoItem.emit(this.todoText);
+    this.todoListService.addTodo(this.todoText);
   }
-
-  changeTodoText($event: KeyboardEvent) {
-    this.todoText = ($event.target as HTMLInputElement).value;
-  }
-  constructor() { }
+  
 
   ngOnInit() {
   }

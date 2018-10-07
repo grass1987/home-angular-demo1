@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { TodoListService } from './todo-list.service';
 import { TodoItem } from './shared/todo-item';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,31 +8,7 @@ import { TodoItem } from './shared/todo-item';
 })
 export class AppComponent {
   title = 'angular-demo';
-  todoItems: TodoItem[] =[{
-    id: 1,
-    value: 'Todo Item No.1',
-    done: false
-  },{
-    id: 2,
-    value: 'Todo Item No.2',
-    done: true
-  },{
-    id: 3,
-    value: 'Todo Item No.3',
-    done: false
-  }];
-
-  addTodo(text) {
-    this.todoItems.push({
-      id: (new Date()).getTime(),
-      value: text,
-      done: false
-    });
-    this.todoItems.push({
-      id: (new Date()).getTime(),
-      value: text,
-      done: false
-    });
+  constructor(private todoListService: TodoListService) {
   }
 
 }
