@@ -10,5 +10,11 @@ export class AppComponent {
   title = 'angular-demo';
   constructor(private todoListService: TodoListService) {
   }
+  today = new Date();
+  bio = {
+    name: 'wellwind',
+    age: 30,
+    sex: 'M'
+  };
 
 }
