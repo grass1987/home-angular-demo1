@@ -1,27 +1,26 @@
 import { TodoItem } from './shared/todo-item';
 import { Injectable } from '@angular/core';
-
+import { Http } from '@angular/http'; // 我們要使用的Http
+//import 'rxjs/add/operator/toPromise'; // 幫助我們將RxJs轉為Promise
+//import { Observable } from 'rxjs/internal/observable';
 @Injectable({
   providedIn: 'root'
 })
 export class TodoListService {
+  constructor(private http: Http) { }
+
+  todoItems: TodoItem[];
 
 
-  todoItems: TodoItem[] =[{
-    id: 1,
-    value: 'Todo Item No.1',
-    done: false
-  },{
-    id: 2,
-    value: 'Todo Item No.2',
-    done: true
-  },{
-    id: 3,
-    value: 'Todo Item No.3',
-    done: false
-  }];
-  
-  constructor() { }
+  loadTodoList(){
+    this.http
+      .get('/assets/todo-list.json')
+      .toPromise()
+      .then(response=>{
+        this.todoItems=response.json();
+      });
+
+  }
   getTodoList() {
     return this.todoItems;
   }

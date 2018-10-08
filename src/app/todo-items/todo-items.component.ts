@@ -23,11 +23,8 @@ export class TodoItemsComponent implements OnInit {
   delete(item: TodoItem) {
     this.todoListService.deleteItem(item);
   }
-  
-  
-  
-
   ngOnInit() {
+    this.todoListService.loadTodoList();
   }
 
 }
