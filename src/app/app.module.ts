@@ -8,12 +8,14 @@ import { TodoItemsComponent } from './todo-items/todo-items.component';
 import { TodoListService } from './todo-list.service';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { TodoDoneCheckPipe } from './todo-done-check.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AddFormComponent,
-    TodoItemsComponent
+    TodoItemsComponent,
+    TodoDoneCheckPipe
 
   ],
   imports: [
