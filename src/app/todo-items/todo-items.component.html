@@ -8,7 +8,8 @@
     </label>
     |
     <a href="#" (click)="delete(item)">刪除</a>
-    <span>{{ item.done | todoDoneCheck:567:true }}</span>
+    
+    <span>{{ item | todoDoneCheck:true }}</span>
     </li>
 </ul>
 <div>
